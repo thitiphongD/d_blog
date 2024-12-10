@@ -1,10 +1,9 @@
 import React from 'react'
+import Summary from './components/Summary'
 
 const HomePage = () => {
   return (
-    <div>
-      Welcome to my blog
-    </div>
+    <Summary />
   )
 }
 
