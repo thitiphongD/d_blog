@@ -1,8 +1,12 @@
 import React from 'react'
+import SwitchDarkMode from './components/SwitchDarkMode'
 
 const HomePage = () => {
   return (
-    <div>HomePageDaew</div>
+    <div>
+      Welcome to my blog
+      <SwitchDarkMode />
+    </div>
   )
 }
 
