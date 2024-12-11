@@ -13,7 +13,7 @@ const Navbar = () => {
             <Link href={'/'} className='text-2xl font-extrabold hidden md:block text-emerald-500 dark:text-[#64ffda]'>D.</Link>
             <div className='flex items-center space-x-1'>
                 <SearchComponent />
-                <Button asChild variant={'ghost'}>
+                <Button asChild variant={'ghost'} className='text-xs tracking-wide'>
                     <Link href='/about-me' aria-label="About Thitiphong">
                         About Me
                     </Link>
