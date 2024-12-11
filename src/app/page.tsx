@@ -4,14 +4,13 @@ import WorkExperience from './components/WorkExperience'
 
 const HomePage = () => {
   return (
-    <div className='flex w-full gap-10'>
-      <div className='w-1/2'>
+    <div className='flex flex-col md:flex-row w-full gap-10'>
+      <div className='w-full md:w-1/2'>
         <Summary />
       </div>
-      <div className='w-1/2'>
+      <div className='w-full md:w-1/2'>
         <WorkExperience />
       </div>
-
     </div>
 
   )
