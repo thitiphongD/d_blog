@@ -1,8 +1,8 @@
+import { dataExperience } from '@/app/data'
 import { Badge } from '@/components/ui/badge'
 import { ScrollArea } from '@/components/ui/scroll-area'
 import Link from 'next/link'
 import React from 'react'
-import { dataExperience } from '../data'
 
 const WorkExperience = () => {
     return (

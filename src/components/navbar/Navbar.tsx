@@ -9,9 +9,15 @@ import SearchComponent from './SearchComponent';
 
 const Navbar = () => {
     return (
-        <header className='px-4 py-6 md:px-10 flex justify-end items-center w-full'>
+        <header className='px-4 py-6 md:px-10 flex justify-between items-center w-full'>
+            <Link href={'/'} className='text-2xl font-extrabold hidden md:block text-emerald-500 dark:text-[#64ffda]'>D.</Link>
             <div className='flex items-center space-x-1'>
                 <SearchComponent />
+                <Button asChild variant={'ghost'}>
+                    <Link href='/about-me' aria-label="About Thitiphong">
+                        About Me
+                    </Link>
+                </Button>
                 <Button asChild variant={'ghost'}>
                     <Link href='https://github.com/thitiphongD' aria-label="Visit Thitiphong's GitHub">
                         <Github />

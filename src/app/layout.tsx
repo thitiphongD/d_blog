@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./css/globals.css";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import Navbar from "@/components/navbar/Navbar";
+import Footer from "@/components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -28,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <ThemeProvider
           attribute="class"
@@ -37,9 +38,8 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <Navbar />
-          <main className="px-4 md:px-10">
-            {children}
-          </main>
+          <main className="px-4 md:px-10 flex-1">{children}</main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
