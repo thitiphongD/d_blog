@@ -1,6 +1,7 @@
 import { dataExperience } from '@/app/data'
 import { Badge } from '@/components/ui/badge'
 import { ScrollArea } from '@/components/ui/scroll-area'
+import { ArrowUpRight } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 
@@ -20,7 +21,13 @@ const WorkExperience = () => {
                             <p className="text-xs font-bold mt-2">{experience.date}</p>
                         </div>
                         <div className='w-full md:w-3/4'>
-                            <p className="mb-2 text-2xl leading-normal font-semibold group-hover:text-emerald-500 dark:group-hover:text-[#64ffda]">{experience.position}, {experience.company}</p>
+                            <div className="mb-2 flex gap-2 text-xl leading-normal font-semibold group-hover:text-emerald-500 dark:group-hover:text-[#64ffda]">
+                                <span>{experience.position}, {experience.company}</span>
+                                <span className="hidden md:block transition-transform duration-300 group-hover:-translate-y-[5px] group-hover:-translate-x-[-5px]">
+                                    <ArrowUpRight />
+                                </span>
+                            </div>
+
                             <p className='tracking-wide leading-normal'>{experience.description}</p>
                             <div className="mt-4 flex gap-2 flex-wrap">
                                 {experience.stack.map((tech, index) => (
