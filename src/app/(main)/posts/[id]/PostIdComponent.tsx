@@ -1,3 +1,5 @@
+'use client';
+
 import { Post } from '@/app/types'
 import React from 'react'
 
