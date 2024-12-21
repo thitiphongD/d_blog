@@ -20,7 +20,7 @@ const SwitchDarkMode = () => {
     if (!mounted) return null;
 
     return (
-        <Button variant={'ghost'} onClick={handleClick}>
+        <Button variant={'ghost'} onClick={handleClick} className='hidden md:block'>
             {theme === 'dark' ? <Sun /> : <Moon />}
         </Button>
     );

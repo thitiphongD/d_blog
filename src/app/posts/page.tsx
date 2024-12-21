@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { Suspense } from 'react'
 import PostComponent from "./components/PostComponent";
+import SkeltionCardLoading from '@/components/loading/SkeltionCardLoading';
 
 const PostPage = () => {
-  return <PostComponent />;
+  return (
+    <Suspense fallback={<SkeltionCardLoading />}>
+      <PostComponent />
+    </Suspense>
+  )
 };
 
 export default PostPage
