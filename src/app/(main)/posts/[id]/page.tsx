@@ -5,7 +5,7 @@ import SkeltionCardLoading from "@/components/loading/SkeltionCardLoading";
 
 const getPost = async (id: string): Promise<Post> => {
   const res = await fetch(`https://dummyjson.com/posts/${id}`, {
-    cache: "force-cache", // Cache indefinitely until deployment
+    cache: "force-cache",
   });
   if (!res.ok) {
     throw new Error(`Failed to fetch post with id: ${id}`);
@@ -13,15 +13,15 @@ const getPost = async (id: string): Promise<Post> => {
   return res.json();
 };
 
-const PostByIDPage = async ({ params }: { params: { id: string } }) => {
-  const { id } = params;
+
+const PostByIDPage = async ({ params }: { params: Promise<{ id: string }> }) => {
+  const { id } = await params;
   const post = await getPost(id);
+
   return (
-    <div>
-      <Suspense fallback={<SkeltionCardLoading />}>
-        <PostIdComponent post={post} />
-      </Suspense>
-    </div>
+    <Suspense fallback={<SkeltionCardLoading />}>
+      <PostIdComponent post={post} />
+    </Suspense>
   );
 };
 

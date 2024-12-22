@@ -1,10 +1,10 @@
 'use client';
 
-import { Post } from '@/app/types'
-import React from 'react'
+import { Post } from "@/app/types";
+import React from "react";
 
 interface PostComponentProps {
-    post: Post
+    post: Post;
 }
 
 const PostIdComponent: React.FC<PostComponentProps> = ({ post }) => {
@@ -13,7 +13,7 @@ const PostIdComponent: React.FC<PostComponentProps> = ({ post }) => {
             <h1>{post.title}</h1>
             <p>{post.body}</p>
         </div>
-    )
-}
+    );
+};
 
-export default PostIdComponent
+export default PostIdComponent;
