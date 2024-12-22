@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
 import SwitchDarkMode from './SwitchDarkMode';
 import { Sheet, SheetTrigger, SheetContent, SheetHeader, SheetTitle, SheetDescription, SheetFooter, SheetClose } from '@/components/ui/sheet';
+import { SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs'
 
 type LinkNav = {
     href: string,
@@ -15,7 +16,7 @@ type LinkNav = {
 
 const links: LinkNav[] = [
     { href: '/posts', label: 'Post' },
-    { href: '/posts/new', label: 'Create Post' }
+    { href: '/board', label: 'Board' }
 ];
 
 const Navbar = () => {
@@ -32,11 +33,12 @@ const Navbar = () => {
                     ))}
                 </div>
                 <div className='flex items-center gap-4'>
-                    <Link href="/about-me" aria-label="About Thitiphong" className="px-2">
+
+                    {/* <Link href="/about-me" aria-label="About Thitiphong" className="px-2">
                         <Avatar className="w-8 h-8">
                             <AvatarImage src="https://avatars.githubusercontent.com/u/80618380?v=4" alt="@thitiphongD" />
                         </Avatar>
-                    </Link>
+                    </Link> */}
                     <Button asChild variant="ghost">
                         <Link href="https://github.com/thitiphongD" aria-label="Visit Thitiphong's GitHub">
                             <Github />
@@ -48,6 +50,12 @@ const Navbar = () => {
                         </Link>
                     </Button>
                     <SwitchDarkMode />
+                    <SignedOut>
+                        <SignInButton />
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
                 </div>
 
             </div>
